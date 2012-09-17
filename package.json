@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "express": "3.0.0rc3",
-    "jade": "*"
+    "mustache": "*",
+    "consolidate": "*",
+    "pg": "0.6.15"
   }
 }
