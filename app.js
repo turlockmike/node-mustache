@@ -28,7 +28,9 @@ app.configure(function(){
   app.set('database_url', process.env.HEROKU_POSTGRESQL_CHARCOAL_URL || "postgres://postgres:michael@127.0.0.1:5432/galli_development"); 
   app.set('query', query);
   app.set('view engine', 'html');
-  app.engine(".html", cons.mustache);
+  app.set('view options', { layout: 'application.html' });
+  app.engine(".hbs", cons.handlebars);
+    app.engine(".html", cons.handlebars);
   app.use(express.favicon());
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
