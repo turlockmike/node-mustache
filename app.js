@@ -24,10 +24,6 @@ app.configure(function () {
     app.use(express.bodyParser());
     app.use(express.cookieParser('Galli9000'));
     app.use(express.cookieSession());
-    app.use(function(req, res, next) {
-        console.log("request", req.session);
-        next();
-    })
     app.use(express.methodOverride());
     app.use(app.router);
 

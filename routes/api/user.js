@@ -1,6 +1,7 @@
 var _ = require('underscore')._
     , routes = require("express-http-routes")
-    , pgSimple = require("pg-simple");
+    , pgSimple = require("pg-simple")
+    , User = require("../../models/user");
 
 routes = {
     /*
@@ -17,7 +18,8 @@ routes = {
 
 
     "PUT /user":function (req, res) {
-        req.session.user = {email:req.body.email, password:req.body.password, password_confirmation:req.body.password_confirmation, login:req.body.login};
+        user = new User({email:req.body.email, password:req.body.password, password_confirmation:req.body.password_confirmation, login:req.body.login});
+        req.session.user = user;
         res.json(200, req.session.user);
     }
 }

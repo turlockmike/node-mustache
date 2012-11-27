@@ -10,6 +10,9 @@
         "npm":"1.1.x"
     },
     "dependencies":{
+        "backbone": "*",
+        "backbone-callbacks": "0.1.x",
+        "backbone-validation": "0.6.x",
         "express":"3.0.0rc3",
         "mustache":"*",
         "consolidate":"*",
