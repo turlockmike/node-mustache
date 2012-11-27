@@ -1,18 +1,21 @@
 {
-  "name": "application-name",
-  "version": "0.0.2",
-  "private": true,
-  "scripts": {
-    "start": "node app"
-  },
-  "engines": {
-    "node": "0.8.x",
-    "npm": "1.1.x"
-  },
-  "dependencies": {
-    "express": "3.0.0rc3",
-    "mustache": "*",
-    "consolidate": "*",
-    "pg": "0.6.15"
-  }
+    "name":"application-name",
+    "version":"0.0.2",
+    "private":true,
+    "scripts":{
+        "start":"node app"
+    },
+    "engines":{
+        "node":"0.8.x",
+        "npm":"1.1.x"
+    },
+    "dependencies":{
+        "express":"3.0.0rc3",
+        "mustache":"*",
+        "consolidate":"*",
+        "pg":"0.6.15",
+        "underscore": "*",
+        "express-http-routes":"git://github.com/milyoni/express-http-routes.git#master",
+        "pg-simple":"git://github.com/milyoni/pg-simple.git#master"
+    }
 }

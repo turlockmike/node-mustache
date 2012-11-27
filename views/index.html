@@ -1,19 +1,15 @@
 <html>
 <head>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0.beta6/handlebars.min.js"></script>
-<script src="/templates/index.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.0/mustache.min.js"></script>
+    <script src="/javascripts/backbone.js"></script>
+    <script src="/javascripts/galli/index.js"></script>
+    <script src="/javascripts/galli/views/index.js"></script>
 </head>
 <body>
 
-<div id="users" data-view='index.html' ></div>
+<div data-view='/index' data-locals='user' data-path="/user"></div>
 
-<script type="application/javascript">
-$(function() {
-$("#users").data('locals', {users: {{{users}}}});
-_.each($("[data-view]"), function(view) { $(view).html(Handlebars.templates[$(view).data('view')]($(view).data('locals')))});
-});
-</script>
 </body>
 </html>

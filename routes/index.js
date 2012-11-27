@@ -1,11 +1,17 @@
+var _ = require('underscore')._
+    , routes = require("express-http-routes")
+    , pgSimple = require("pg-simple");
 
-/*
- * GET home page.
- */
- 
-exports.index = function(req, res){
-  var query = req.app.get("query");
-   query("select * from users", function(result) {
-     res.render('index.html', {users: JSON.stringify(result.rows[0]), layout: 'application.html' } );
-   });
-};
+
+indexRoutes = {
+    /*
+     * GET home page.
+     */
+    "GET /":function (req, res) {
+        res.render('index.html', {layout:'application.html' });
+    }
+}
+
+_.extend(routes.all, indexRoutes);
+_.extend(routes.all, require('./api/user'));
+_.extend(module.exports, routes);
